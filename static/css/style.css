@@ -1,0 +1,105 @@
+.wrapper { 
+     width: 600px;
+     margin: 0 auto;
+}
+.header {
+     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+     width: 100%;
+}
+.header_photo{
+     width: 100%;
+     height: 250px;
+     background-image: url(../img/bcg_photo.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: 20%;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-end;
+}
+.header_box {
+     display: flex;
+     margin-left: 30px;
+     margin-bottom: 30px;
+}
+.avatar{
+     border-radius: 50%;
+     width: 65px;
+     height: 65px;
+     background-image: url(../img/avatar.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     margin-right: 20px;
+}
+.header_text_box {
+     background-color: rgba(0, 0, 0, 0.500);
+     color: white;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     padding: 5px;
+     border-radius: 2px;
+}
+.name_txt_header{
+     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+     font-weight: bold;
+     font-size: 20px;
+     font-weight: bold;
+     line-height: 1;
+     margin-bottom: 3px;
+}
+.info_txt_header {
+     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+     font-size: 14px; 
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+.nav_button {
+     display: block;
+     width: 30px;
+     height: 30px;
+     background-repeat: no-repeat;
+     background-size: contain;
+}
+.nav_1 {
+     background-image: url(../svg/calendar.svg);
+}
+.nav_2 {
+     background-image: url(../svg/photo.svg);
+}
+.nav_3 {
+     background-image: url(../svg/reports.svg);
+}
+.nav_4 {
+     background-image: url(../svg/info.svg);
+}
+.sign_page {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+.sign_txt {
+     font-size: 15px;
+     line-height: 1.33;
+     text-align: center;
+     color: #6D6D72;
+     margin: 20px 6px;
+}
+.sign_btn {
+     width: 90%;
+     height: 50px;
+     display: flex;
+     background: radial-gradient(circle, rgba(112,6,110,1) 0%, rgba(116,9,121,1) 65%, rgba(126,18,95,1) 91%);
+     color: white;
+     border-radius: 10px;
+     align-items: center;
+     justify-content: center;
+     text-decoration: none;
+     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+}
+.sign_btn:hover {
+     background: radial-gradient(circle, rgba(122,112,122,1) 0%, rgba(87,77,88,1) 65%, rgba(94,85,92,1) 91%);
+}
