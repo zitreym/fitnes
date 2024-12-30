@@ -1,5 +1,5 @@
 <?php
-require("/src/header.php");
-require("/src/photo.php");
-require("/src/footer.php");
+require("/var/www/html/public/src/header.php");
+require("/var/www/html/public/src/photo.php");
+require("/var/www/html/public/src/footer.php");
 ?>
