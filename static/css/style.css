@@ -77,17 +77,21 @@
 .nav_4 {
      background-image: url(../svg/info.svg);
 }
-.sign_page {
+.regular_page {
      display: flex;
      flex-direction: column;
      align-items: center;
 }
-.sign_txt {
+.regular_txt {
      font-size: 15px;
      line-height: 1.33;
      text-align: center;
      color: #6D6D72;
      margin: 20px 6px;
+}
+.bold_txt{
+     color: black;
+     font-weight: bold;
 }
 .sign_btn {
      width: 90%;

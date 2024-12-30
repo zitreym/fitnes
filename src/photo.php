@@ -1,5 +1,5 @@
 <body>
-<div class="sign_page">
-    <p class="sign_txt">тут фото</p>
+<div class="regular_page">
+    <p class="regular_txt">тут фото</p>
 </div>
 </body>
