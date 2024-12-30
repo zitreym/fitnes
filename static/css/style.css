@@ -103,3 +103,28 @@
 .sign_btn:hover {
      background: radial-gradient(circle, rgba(122,112,122,1) 0%, rgba(87,77,88,1) 65%, rgba(94,85,92,1) 91%);
 }
+.sign_btn {
+     width: 90%;
+     height: 50px;
+     display: flex;
+     border-radius: 10px;
+     align-items: center;
+     justify-content: center;
+     text-decoration: none;
+     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+     background-size: 64px 50px;
+     background-repeat: no-repeat;
+     background-position: left center;
+}
+.sign_btn:hover {
+     background: radial-gradient(circle, rgb(248, 219, 248) 0%, rgba(87,77,88,1) 65%, rgba(94,85,92,1) 91%);
+}
+ .tel_icon {
+     background-image: url(../img/tel.png);
+ }
+ .wa_icon{
+     background-image: url(../img/wa.png);
+ }
+ .tg_icon{
+     background-image: url(../img/tg.png);
+ }
