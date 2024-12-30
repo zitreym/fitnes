@@ -118,7 +118,7 @@
      color: black;
      margin-bottom: 10px;
 }
-.sign_btn:hover {
+.link_btn:hover {
      background: radial-gradient(circle, rgb(248, 219, 248) 0%, rgba(87,77,88,1) 65%, rgba(94,85,92,1) 91%);
 }
  .tel_icon {
