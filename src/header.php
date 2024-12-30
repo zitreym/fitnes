@@ -20,9 +20,9 @@
         </div>
     </div>
     <ul class="nav">
-        <li><a href="#" class="nav_button nav_1"></a></li>
-        <li><a href="photo" class="nav_button nav_2"></a></li>
-        <li><a href="#" class="nav_button nav_3"></a></li>
-        <li><a href="#" class="nav_button nav_4"></a></li>
+        <li><a href="/" class="nav_button nav_1"></a></li>
+        <li><a href="/photo" class="nav_button nav_2"></a></li>
+        <li><a href="/reports" class="nav_button nav_3"></a></li>
+        <li><a href="/info" class="nav_button nav_4"></a></li>
     </ul>
 </header>
