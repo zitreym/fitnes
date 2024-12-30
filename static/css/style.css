@@ -115,6 +115,8 @@
      background-size: 64px 50px;
      background-repeat: no-repeat;
      background-position: left center;
+     color: black;
+     margin-bottom: 10px;
 }
 .sign_btn:hover {
      background: radial-gradient(circle, rgb(248, 219, 248) 0%, rgba(87,77,88,1) 65%, rgba(94,85,92,1) 91%);
