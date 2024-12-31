@@ -142,6 +142,7 @@
      flex-direction: column;
      border-radius: 10px;
      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+     margin-bottom: 15px;
 }
 .info_bold_txt {
      color: black;
@@ -166,9 +167,11 @@
 }
 .info_address_btn {
      margin-bottom: 10px;
+     text-decoration: none;
 }
 .info_tel_box {
      display: flex;
+     margin-bottom: 10px;
 }
 .info_tel_txt {
      margin-right: 3px;
@@ -176,8 +179,9 @@
 .info_address_btn_vk {
      margin-left: 30px;
      position: relative;
+     text-decoration: none;
 }
-info_address_btn_vk::before {
+.info_address_btn_vk::before {
      content: "";
      left: -25px;
      top: 0;
