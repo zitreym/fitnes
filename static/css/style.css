@@ -150,7 +150,7 @@
      margin-bottom: 10px;
 }
 .info_bold_txt_maps {
-     margin-left: 30px;
+     margin-left: 25px;
      position: relative;
 }
 .info_bold_txt_maps::before {
@@ -183,10 +183,10 @@
 }
 .info_address_btn_vk::before {
      content: "";
-     left: -25px;
-     top: 0;
-     width: 15px;
-     height: 15px;
+     left: -30px;
+     top: -5px;
+     width: 25px;
+     height: 25px;
      position: absolute;
      background-repeat: no-repeat;
      background-position: center;
