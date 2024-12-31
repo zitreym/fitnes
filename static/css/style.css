@@ -135,6 +135,30 @@
  .tg_icon{
      background-image: url(../img/tg.png);
  }
+.info_maps_box {
+     width: 90%;
+     height: 50px;
+     display: flex;
+     flex-direction: column;
+     border-radius: 10px;
+     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+}
+.info_bold_txt {
+     color: black;
+     font-weight: bold;
+}
+.info_bold_txt::before {
+     content: "";
+     left: 0;
+     top: 0;
+     width: 30px;
+     height: 30px;
+     position: absolute;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: 100px;
+     background-image: url(../img/wa.png);
+}
  @media (max-width: 600px) {
 .wrapper { 
      width: 100%;
