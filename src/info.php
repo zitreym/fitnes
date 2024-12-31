@@ -10,7 +10,7 @@
         <p class="info_bold_txt">Мои контакты:</p>
         <div class="info_tel_box">
             <p class="info_tel_txt">Тел:</p>
-            <a href="tel:+79209440332">+79209440332</a>
+            <a href="tel:+79209440332" class="info_tel_btn">+79209440332</a>
         </div>
         <p class="info_bold_txt">Специализация:</p>
         <p>Фитнес для девушек</p>

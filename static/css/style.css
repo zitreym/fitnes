@@ -193,6 +193,9 @@
      background-size: contain;
      background-image: url(../img/vk.png);
 }
+.info_tel_btn {
+     text-decoration: none;
+}
  @media (max-width: 600px) {
 .wrapper { 
      width: 100%;
