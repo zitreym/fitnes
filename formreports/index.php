@@ -1,5 +1,5 @@
 <?php
-require("/var/www/html/public/src/header.php");
-require("/var/www/html/public/src/formreports.php");
-require("/var/www/html/public/src/footer.php");
+require $_SERVER['DOCUMENT_ROOT']."/src/header.php";
+require $_SERVER['DOCUMENT_ROOT']."/src/formreports.php";
+require $_SERVER['DOCUMENT_ROOT']."/src/footer.php";
 ?>
