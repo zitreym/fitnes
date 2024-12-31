@@ -14,7 +14,7 @@
             <div class="avatar"></div>
             <div class="header_text_box">
                 <h1 class="name_txt_header">Баранова Татьяна</h1>
-                <p class="info_txt_header">Фитнес<br>Курлово, ул.Володарского д.1</p>
+                <p class="info_txt_header">Фитнес<br>Курлово, ул.Школьная д.20</p>
             </div>
         </div>
     </div>

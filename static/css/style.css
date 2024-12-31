@@ -135,7 +135,7 @@
  .tg_icon{
      background-image: url(../img/tg.png);
  }
-.info_maps_box {
+.info_box {
      width: 90%;
      padding: 10px;
      display: flex;
@@ -146,11 +146,13 @@
 .info_bold_txt {
      color: black;
      font-weight: bold;
-     position: relative;
-     margin-left: 30px;
      margin-bottom: 10px;
 }
-.info_bold_txt::before {
+.info_bold_txt_maps {
+     margin-left: 30px;
+     position: relative;
+}
+.info_bold_txt_maps::before {
      content: "";
      left: -25px;
      top: 0;
@@ -164,6 +166,28 @@
 }
 .info_address_btn {
      margin-bottom: 10px;
+}
+.info_tel_box {
+     display: flex;
+}
+.info_tel_txt {
+     margin-right: 3px;
+}
+.info_address_btn_vk {
+     margin-left: 30px;
+     position: relative;
+}
+info_address_btn_vk::before {
+     content: "";
+     left: -25px;
+     top: 0;
+     width: 15px;
+     height: 15px;
+     position: absolute;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: contain;
+     background-image: url(../img/vk.png);
 }
  @media (max-width: 600px) {
 .wrapper { 
