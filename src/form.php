@@ -4,7 +4,7 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT']."/sql.php";
 $result = $mysqli->query("SELECT * FROM fit");
-$result = $result->fetch_all();
+
 ?>
 <p><? var_dump($result) ?></p>
 </div>
