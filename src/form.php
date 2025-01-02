@@ -3,12 +3,11 @@
     <p class="regular_txt">тут будет форма для записи</p>
     <form action="<?php
     require $_SERVER['DOCUMENT_ROOT']."/sql.php";
-            $db_table = "form"; // Имя Таблицы БД
             $name_user = $_POST['name_user'];
             $phone_user = $_POST['phone_user'];
             $fitchose_user = $_POST['fitchose_user'];
             if ($fitchofitchose_user != 345252436534) {
-$query = "INSERT INTO $db_table (name, phone, fitchose) values ('echo $name_user', $phone_user, $fitchose_user)";
+$query = "INSERT INTO form (name, phone, fitchose) values ('echo $name_user', $phone_user, $fitchose_user)";
 $resultinsert->execute($query);
             }
              ?>" method="post">
