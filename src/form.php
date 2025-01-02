@@ -35,10 +35,5 @@ foreach ($result as $row) {
     ?>
         <input type="submit" value="ОТПРАВИТЬ" class="form_button">
     </form>
-    <?php
-        if ($phone > 1) {
-        echo "<script>alert('Спасибо, вы успешно записаны на тренировку!')</script>";
-        }
-        ?>
 </div>
 </body>
