@@ -7,10 +7,8 @@
             $name_user = $_POST['name_user'];
             $phone_user = $_POST['phone_user'];
             $fitchose_user = $_POST['fitchose_user'];
-            if ($fitchofitchose_user > 0) {
-$query = "INSERT INTO $db_table (name, phone, fitchose) values ($name_user, $phone_user, $fitchose_user)";
+$query = "INSERT INTO $db_table (name, phone, fitchose) values ('echo $name_user', $phone_user, $fitchose_user)";
 $resultinsert->execute($query);
-            }
              ?>" method="post">
         <input type="text" class="form_input" placeholder="ВАШЕ ИМЯ*" name="name_user" required>
         <input type="text" class="form_input" placeholder="НОМЕР ТЕЛЕФОНА" name="phone_user" required>
