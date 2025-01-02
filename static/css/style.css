@@ -198,7 +198,6 @@
 }
 .form_sign {
      width: 90%;
-     padding: 10px;
      display: flex;
      flex-direction: column;
      border-radius: 10px;
@@ -232,6 +231,11 @@
 }
 .radio_chose {
      margin-right: 10px;
+}
+.form_border {
+     padding: 10px;
+     display: flex;
+     flex-direction: column;
 }
  @media (max-width: 600px) {
 .wrapper { 

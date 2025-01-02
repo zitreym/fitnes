@@ -10,6 +10,7 @@ $query = $mysqli->query("INSERT INTO form (name, phone, fitchose) values ('$name
             }
              ?>" method="post" class='form_sign'>
         <p class="form_txt_info">Запись на тренировку:</p>
+        <div class='form_border'>
         <input type="text" class="form_input" placeholder="ВАШЕ ИМЯ*" name="name_user" required>
         <input type="text" class="form_input" placeholder="НОМЕР ТЕЛЕФОНА" name="phone_user" required>
         <?php
@@ -33,6 +34,7 @@ foreach ($result as $row) {
     <?
     }
     ?>
+    </div>
         <input type="submit" value="ОТПРАВИТЬ" class="form_button">
     </form>
 </div>
