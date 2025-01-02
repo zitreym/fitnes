@@ -7,7 +7,7 @@
             $phone_user = $_POST['phone_user'];
             $fitchose_user = $_POST['fitchose_user'];
             if ($fitchose_user > 0) {
-$query = $mysqli->query("INSERT INTO form (name, phone, fitchose) values ($name_user, $phone_user, $fitchose_user)");
+$query = $mysqli->query("INSERT INTO form (name, phone, fitchose) values ('$name_user', '$phone_user', $fitchose_user)");
             }
              ?>" method="post">
         <input type="text" class="form_input" placeholder="ВАШЕ ИМЯ*" name="name_user" required>
