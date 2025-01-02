@@ -18,7 +18,7 @@ $result = $result->fetch_all();
 foreach ($result as $row) {
     ?>
             <div class='chose_radio'>
-                <input name="fitchose_user" type="radio" value="<? echo $row[0]; ?>">
+                <input class='radio_chose' name="fitchose_user" type="radio" value="<? echo $row[0]; ?>">
                 <div class=txt_box_radio>
                     <div class='chose_radio_top'>
                         <p><? echo $row[5]; ?></p>

@@ -230,6 +230,9 @@
      width: 100%;
      text-align: center;
 }
+.radio_chose {
+     margin-right: 10px;
+}
  @media (max-width: 600px) {
 .wrapper { 
      width: 100%;
