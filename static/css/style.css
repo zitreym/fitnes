@@ -209,6 +209,8 @@
 }
 .chose_radio {
      display: flex;
+     border-bottom: rgb(116, 116, 116) solid 1px;
+     margin-bottom: 10px;
 }
 .txt_box_radio {
      display: flex;
@@ -219,9 +221,14 @@
 .chose_radio_top {
      display: flex;
      justify-content: space-between;
+     margin-bottom: 3px;
 }
 .chose_radio_bot {
      display: flex;
+}
+.form_txt_info {
+     width: 100%;
+     text-align: center;
 }
  @media (max-width: 600px) {
 .wrapper { 

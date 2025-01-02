@@ -1,6 +1,5 @@
 <body>
 <div class="sign_page">
-    <p class="regular_txt">тут будет форма для записи</p>
     <form action="<?php
     require $_SERVER['DOCUMENT_ROOT']."/sql.php";
             $name_user = $_POST['name_user'];
@@ -10,6 +9,7 @@
 $query = $mysqli->query("INSERT INTO form (name, phone, fitchose) values ('$name_user', '$phone_user', $fitchose_user)");
             }
              ?>" method="post" class='form_sign'>
+        <p class="form_txt_info">Запись на тренировку:</p>
         <input type="text" class="form_input" placeholder="ВАШЕ ИМЯ*" name="name_user" required>
         <input type="text" class="form_input" placeholder="НОМЕР ТЕЛЕФОНА" name="phone_user" required>
         <?php
@@ -22,7 +22,7 @@ foreach ($result as $row) {
                 <div class=txt_box_radio>
                     <div class='chose_radio_top'>
                         <p><? echo $row[5]; ?></p>
-                        <p>Стоимость: <? echo $row[4]; ?>₽</p>
+                        <p><? echo $row[4]; ?>₽</p>
                     </div>
                     <div class='chose_radio_bot'>
                         <p><? echo $row[1]; ?> </p>
