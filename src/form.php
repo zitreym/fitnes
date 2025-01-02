@@ -22,7 +22,7 @@ foreach ($result as $row) {
                 <div class=txt_box_radio>
                     <div class='chose_radio_top'>
                         <p><? echo $row[2]; ?></p>
-                        <p><? echo $row[4]; ?></p>
+                        <p>Стоимость: <? echo $row[4]; ?>₽</p>
                     </div>
                     <div class='chose_radio_bot'>
                         <p><? echo $row[1]; ?></p>

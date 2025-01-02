@@ -213,6 +213,8 @@
 .txt_box_radio {
      display: flex;
      flex-direction: column;
+     margin-bottom: 10px;
+     width: 100%;
 }
 .chose_radio_top {
      display: flex;
