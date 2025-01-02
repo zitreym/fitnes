@@ -2,6 +2,7 @@
 <div class="sign_page">
     <p class="regular_txt">тут будет форма для записи</p>
     <form action="<?php
+    require $_SERVER['DOCUMENT_ROOT']."/sql.php";
             $db_table = "form"; // Имя Таблицы БД
             $name = $_POST['name'];
             $phone = $_POST['phone'];
@@ -24,7 +25,6 @@ $query->execute($data);
         <input type="text" class="form_input" placeholder="ВАШЕ ИМЯ*" name="name" required>
         <input type="text" class="form_input" placeholder="НОМЕР ТЕЛЕФОНА" name="phone" required>
         <?php
-require $_SERVER['DOCUMENT_ROOT']."/sql.php";
 $result = $mysqli->query("SELECT * FROM fit where date >= NOW() ");
 $result = $result->fetch_all();
 foreach ($result as $row) {
