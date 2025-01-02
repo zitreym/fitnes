@@ -3,24 +3,25 @@
     <p class="regular_txt">тут будет форма для записи</p>
     <form action="<?php
             $db_table = "form"; // Имя Таблицы БД
-            $name_user = $_POST['name_user'];
-            $fitchose = $_POST['fitchose'];
+            $name = $_POST['name'];
             $phone = $_POST['phone'];
-            $name_user = htmlspecialchars($name_user);
+            $fitchose = $_POST['fitchose'];
+            $name = htmlspecialchars($name);
             $phone = htmlspecialchars($phone);
-            $name_user = urldecode($name_user);
-            $email_user = urldecode($email_user);
+            $fitchose = htmlspecialchars($fitchose);
+            $name = urldecode($name);
             $phone = urldecode($phone);
-            $message_user = urldecode($message_user);
-            $name_user = trim($name_user);
+            $fitchose = urldecode($fitchose);
+            $name = trim($name);
             $phone = trim($phone);
+            $fitchose = trim($fitchose);
             if ($phone > 1) {
-$data = array( 'name' => $name_user, 'phone' => $phone, 'fitchose' => $fitchose);
+$data = array( 'name' => $name, 'phone' => $phone, 'fitchose' => $fitchose);
 $query = $mysqli->prepare("INSERT INTO $db_table (name, phone, fitchose) values (:name, :phone, :fitchose)");
 $query->execute($data);
             }
              ?>" method="post">
-        <input type="text" class="form_input" placeholder="ВАШЕ ИМЯ*" name="name_user" required>
+        <input type="text" class="form_input" placeholder="ВАШЕ ИМЯ*" name="name" required>
         <input type="text" class="form_input" placeholder="НОМЕР ТЕЛЕФОНА" name="phone" required>
         <?php
 require $_SERVER['DOCUMENT_ROOT']."/sql.php";
