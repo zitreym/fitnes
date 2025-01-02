@@ -25,8 +25,8 @@ foreach ($result as $row) {
                         <p>Стоимость: <? echo $row[4]; ?>₽</p>
                     </div>
                     <div class='chose_radio_bot'>
-                        <p><? echo $row[1]; ?></p>
-                        <p><? echo $row[3]; ?></p>
+                        <p><? echo $row[1]; ?> </p>
+                        <p>(<? echo $row[3]; ?>)</p>
                     </div>
                 </div>
 </div>
