@@ -196,6 +196,31 @@
 .info_tel_btn {
      text-decoration: none;
 }
+.form_sign {
+     width: 90%;
+     padding: 10px;
+     display: flex;
+     flex-direction: column;
+     border-radius: 10px;
+     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+}
+.form_input {
+     margin-bottom: 10px;
+}
+.chose_radio {
+     display: flex;
+}
+.txt_box_radio {
+     display: flex;
+     flex-direction: column;
+}
+.chose_radio_top {
+     display: flex;
+     justify-content: space-between;
+}
+.chose_radio_bot {
+     display: flex;
+}
  @media (max-width: 600px) {
 .wrapper { 
      width: 100%;

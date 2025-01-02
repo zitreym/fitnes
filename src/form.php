@@ -9,7 +9,7 @@
             if ($fitchose_user > 0) {
 $query = $mysqli->query("INSERT INTO form (name, phone, fitchose) values ('$name_user', '$phone_user', $fitchose_user)");
             }
-             ?>" method="post">
+             ?>" method="post" class='form_sign'>
         <input type="text" class="form_input" placeholder="ВАШЕ ИМЯ*" name="name_user" required>
         <input type="text" class="form_input" placeholder="НОМЕР ТЕЛЕФОНА" name="phone_user" required>
         <?php
@@ -17,7 +17,19 @@ $result = $mysqli->query("SELECT * FROM fit where date >= NOW() ");
 $result = $result->fetch_all();
 foreach ($result as $row) {
     ?>
-            <p><input name="fitchose_user" type="radio" value="<? echo $row[0]; ?>"><? echo $row[2]; ?><br><? echo $row[1]; ?><br><? echo $row[3]; ?><br><? echo $row[4]; ?></p>
+            <div class='chose_radio'>
+                <input name="fitchose_user" type="radio" value="<? echo $row[0]; ?>">
+                <div class=txt_box_radio>
+                    <div class='chose_radio_top'>
+                        <p><? echo $row[2]; ?></p>
+                        <p><? echo $row[4]; ?></p>
+                    </div>
+                    <div class='chose_radio_bot'>
+                        <p><? echo $row[1]; ?></p>
+                        <p><? echo $row[3]; ?></p>
+                    </div>
+                </div>
+</div>
     <?
     }
     ?>
