@@ -7,7 +7,7 @@
             $phone_user = $_POST['phone_user'];
             $fitchose_user = $_POST['fitchose_user'];
             if ($fitchofitchose_user != null) {
-$query = "INSERT INTO form (name, phone, fitchose) values ('echo $name_user', $phone_user, $fitchose_user)";
+$query = "INSERT INTO form (name, phone, fitchose) values ($name_user, $phone_user, $fitchose_user)";
 $resultinsert->execute($query);
             }
              ?>" method="post">
