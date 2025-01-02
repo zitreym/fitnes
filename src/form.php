@@ -4,7 +4,7 @@
     <form action="<?php
             $db_table = "form"; // Имя Таблицы БД
             $name_user = $_POST['name_user'];
-            $fitchose = = $_POST['fitchose'];
+            $fitchose = $_POST['fitchose'];
             $telephone_user = $_POST['telephone_user'];
             $name_user = htmlspecialchars($name_user);
             $telephone_user = htmlspecialchars($telephone_user);
