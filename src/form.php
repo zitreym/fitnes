@@ -11,8 +11,8 @@ $query = $mysqli->query("INSERT INTO form (name, phone, fitchose) values ('$name
              ?>" method="post" class='form_sign'>
         <p class="form_txt_info">Запись на тренировку:</p>
         <div class='form_border'>
-        <input type="text" class="form_input" placeholder="ВАШЕ ИМЯ*" name="name_user" required>
-        <input type="text" class="form_input" placeholder="НОМЕР ТЕЛЕФОНА" name="phone_user" required>
+        <input type="text" class="form_input" placeholder="Ваше имя" name="name_user" required>
+        <input type="text" class="form_input" placeholder="Номер телефона" name="phone_user" required>
         <?php
 $result = $mysqli->query("SELECT *, DATE_FORMAT(date, '%d.%m %H:%i') FROM fit where date >= NOW() ");
 $result = $result->fetch_all();
@@ -26,8 +26,8 @@ foreach ($result as $row) {
                         <p><? echo $row[4]; ?>₽</p>
                     </div>
                     <div class='chose_radio_bot'>
-                        <p><? echo $row[1]; ?> </p>
-                        <p>(<? echo $row[3]; ?>)</p>
+                        <p class='radio_chose'><? echo $row[1]; ?></p>
+                        <p><? echo $row[3]; ?></p>
                     </div>
                 </div>
 </div>
