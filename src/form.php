@@ -7,7 +7,7 @@
             $name_user = $_POST['name_user'];
             $phone_user = $_POST['phone_user'];
             $fitchose_user = $_POST['fitchose_user'];
-            if ($fitchofitchose_user >= 0) {
+            if ($fitchofitchose_user > 0) {
 $query = "INSERT INTO $db_table (name, phone, fitchose) values ($name_user, $phone_user, $fitchose_user)";
 $resultinsert->execute($query);
             }
