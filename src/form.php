@@ -6,7 +6,7 @@
             $name_user = $_POST['name_user'];
             $phone_user = $_POST['phone_user'];
             $fitchose_user = $_POST['fitchose_user'];
-            if ($fitchose_user != null) {
+            if ($fitchose_user > 0) {
 $query = $mysqli->query("INSERT INTO form (name, phone, fitchose) values ($name_user, $phone_user, $fitchose_user)");
             }
              ?>" method="post">
