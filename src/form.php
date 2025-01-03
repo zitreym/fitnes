@@ -8,7 +8,12 @@
             $fitchose_user = $_POST['fitchose_user'];
             if ($fitchose_user > 0) {
 $query = $mysqli->query("INSERT INTO form (name, phone, fitchose) values ('$name_user', '$phone_user', $fitchose_user)");
-$message_for_tg = "Новая запись на тренировку номер $fitchose_user от $name_user с телефоном $phone_user";
+$result_fit = $mysqli->query("SELECT DATE_FORMAT(date, '%d.%m %H:%i'), name, description FROM fit where id='$code_fit'");
+$result_fit = $result_fit->fetch_all();
+$date_fit=$result_fit[0][0];
+$name_fit=$result_fit[0][1];
+$description_fit=$result_fit[0][2];
+$message_for_tg = "Новая запись на тренировку $date_fit $name_fit $description_fit от $name_user с телефоном $phone_user";
 $getQuery = array(
     "chat_id" 	=> $admin,
     "text"  	=> $message_for_tg,
