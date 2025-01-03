@@ -8,7 +8,7 @@
             $fitchose_user = $_POST['fitchose_user'];
             if ($fitchose_user > 0) {
 $query = $mysqli->query("INSERT INTO form (name, phone, fitchose) values ('$name_user', '$phone_user', $fitchose_user)");
-$result_fit = $mysqli->query("SELECT DATE_FORMAT(date, '%d.%m %H:%i'), name, description FROM fit where id='$code_fit'");
+$result_fit = $mysqli->query("SELECT DATE_FORMAT(date, '%d.%m %H:%i'), name, description FROM fit where id='$fitchose_user'");
 $result_fit = $result_fit->fetch_all();
 $date_fit=$result_fit[0][0];
 $name_fit=$result_fit[0][1];
