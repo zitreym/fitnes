@@ -30,6 +30,20 @@ switch ($textArray[0]) {
         $resultQuery = curl_exec($ch);
         curl_close($ch);
         break;
+    case '/start':
+        $query = $mysqli->query("INSERT INTO fit (name, description, date, price) values ('$textArray[1]', '$textArray[2]', '$textArray[3]', '$textArray[4]')");
+        $message_for_tg = "Это фитнес бот, чтобы добавить тренировку, напишите: добавить, название тренировки, описание тренировки, 2025-01-05 17:00, 250";
+        $getQuery = array(
+            "chat_id" 	=> $userid,
+            "text"  	=> $message_for_tg,
+            "parse_mode" => "html"
+        );
+        $ch = curl_init("https://api.telegram.org/bot". $token ."/sendMessage?" . http_build_query($getQuery));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        $resultQuery = curl_exec($ch);
+        curl_close($ch);
+        break;
     default:
         $message_for_tg = "Я не знаю такую команду, для того, чтобы добавить тренировку, напишите так:
             добавить, название тренировки, описание тренировки, 2025-01-05 17:00, 250";
