@@ -23,6 +23,7 @@ $date_fit=$result_fit[0][0];
 $name_fit=$result_fit[0][1];
 $description_fit=$result_fit[0][2];
 $message_for_tg = "Новая запись на тренировку $date_fit $name_fit $description_fit от $name_user с телефоном $phone_user";
+foreach ($admins as $admin) {
 $getQuery = array(
     "chat_id" 	=> $admin,
     "text"  	=> $message_for_tg,
@@ -33,7 +34,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HEADER, false);
 $resultQuery = curl_exec($ch);
 curl_close($ch);
-
+}
 
             }
              ?>" method="post" class='form_sign'>
