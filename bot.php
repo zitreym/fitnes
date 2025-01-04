@@ -31,7 +31,8 @@ switch ($textArray[0]) {
         curl_close($ch);
         break;
     default:
-        $message_for_tg = "Я не знаю такую команду";
+        $message_for_tg = "Я не знаю такую команду, для того, чтобы добавить тренировку, напишите так:
+            добавить, название тренировки, описание тренировки, 2025-01-05 17:00, 250";
         $getQuery = array(
             "chat_id" 	=> $userid,
             "text"  	=> $message_for_tg,
