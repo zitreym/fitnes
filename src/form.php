@@ -1,5 +1,14 @@
 <body>
 <div class="sign_page">
+<?php
+$result_allfit = $mysqli->query("SELECT *, DATE_FORMAT(date, '%d.%m %H:%i') FROM fit where date >= NOW() ");
+$result_allfit = $result_allfit->fetch_all();
+if (empty($result_allfit)) {
+    ?><p class="regular_txt"><? echo "Сейчас нет тренировки на которую можно записаться, заходите позднее";?></p><?
+}
+else {
+?>
+
     <form action="<?php
     require $_SERVER['DOCUMENT_ROOT']."/sql.php";
     require $_SERVER['DOCUMENT_ROOT']."/botsettings.php";
@@ -33,9 +42,7 @@ curl_close($ch);
         <input type="text" class="form_input" placeholder="Ваше имя" name="name_user" required>
         <input type="text" class="form_input" placeholder="Номер телефона" name="phone_user" required>
         <?php
-$result = $mysqli->query("SELECT *, DATE_FORMAT(date, '%d.%m %H:%i') FROM fit where date >= NOW() ");
-$result = $result->fetch_all();
-foreach ($result as $row) {
+foreach ($result_allfit as $row) {
     ?>
             <div class='chose_radio'>
                 <input class='radio_chose' name="fitchose_user" type="radio" value="<? echo $row[0]; ?>">
@@ -56,5 +63,11 @@ foreach ($result as $row) {
     </div>
         <input type="submit" value="ОТПРАВИТЬ" class="form_button">
     </form>
+    <?
+    }
+    ?>
 </div>
 </body>
+
+
+
