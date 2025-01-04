@@ -3,13 +3,14 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT']."/sql.php";
 require $_SERVER['DOCUMENT_ROOT']."/botsettings.php";
-$result_allfit = $mysqli->query("SELECT *, DATE_FORMAT(date, '%d.%m %H:%i') FROM fit where date <= NOW() ");
+$result_allfit = $mysqli->query("SELECT *, DATE_FORMAT(date, '%d.%m %H:%i') FROM fit where date >= NOW() ");
 $result_allfit = $result_allfit->fetch_all();
 if (empty($result_allfit)) {
     ?><p class="regular_txt">Сейчас нет тренировки на которую можно записаться, заходите позднее</p><?
 }
 else {
 ?>
+
     <form action="<?php
             $name_user = $_POST['name_user'];
             $phone_user = $_POST['phone_user'];
