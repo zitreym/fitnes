@@ -4,7 +4,7 @@
 $result_allfit = $mysqli->query("SELECT *, DATE_FORMAT(date, '%d.%m %H:%i') FROM fit where date >= NOW() ");
 $result_allfit = $result_allfit->fetch_all();
 if (empty($result_allfit)) {
-    ?><p class="regular_txt"><? echo "Сейчас нет тренировки на которую можно записаться, заходите позднее";?></p><?
+    ?><p class="regular_txt">Сейчас нет тренировки на которую можно записаться, заходите позднее</p><?
 }
 else {
 ?>
