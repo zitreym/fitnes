@@ -10,7 +10,7 @@
 .header_photo{
      width: 100%;
      height: 250px;
-     background-image: url(../img/bcg_photo.jpg);
+     background-image: url(../img/bcg_photo.webp);
      background-repeat: no-repeat;
      background-size: cover;
      background-position: 20%;
@@ -27,7 +27,7 @@
      border-radius: 50%;
      width: 65px;
      height: 65px;
-     background-image: url(../img/avatar.jpg);
+     background-image: url(../img/avatar.webp);
      background-repeat: no-repeat;
      background-size: cover;
      margin-right: 20px;
