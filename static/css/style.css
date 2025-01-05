@@ -68,8 +68,14 @@
 .nav_1 {
      background-image: url(../svg/calendar.svg);
 }
+.nav_1_active {
+     background-image: url(../menuicons/calendar_active.png);
+}
 .nav_2 {
      background-image: url(../svg/photo.svg);
+}
+.nav_2_active {
+     background-image: url(../menuicons/photo_active.png);
 }
 .nav_3 {
      background-image: url(../svg/reports.svg);
@@ -79,6 +85,9 @@
 }
 .nav_4 {
      background-image: url(../svg/info.svg);
+}
+.nav_4_active {
+     background-image: url(../menuicons/info_active.png);
 }
 .regular_page {
      display: flex;
