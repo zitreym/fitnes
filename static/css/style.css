@@ -74,6 +74,9 @@
 .nav_3 {
      background-image: url(../svg/reports.svg);
 }
+.nav_3_active {
+     background-image: url(../menuicons/reports_active.png);
+}
 .nav_4 {
      background-image: url(../svg/info.svg);
 }
