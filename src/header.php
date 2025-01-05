@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Фитнес для девушек</title>
         <link rel="stylesheet" href="/static/css/reset.css">
+        <link rel="shortcut icon" href="/static/img/ico.png" type="image/png">
         <link rel="stylesheet" href="/static/css/style.css">
     </head>
 <div class="wrapper">
