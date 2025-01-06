@@ -42,6 +42,8 @@ switch ($textArray[0]) {
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HEADER, false);
         $resultQuery = curl_exec($ch);
+        $json = json_encode($resultQuery);
+        $query_tg = $mysqli->query("INSERT INTO tglog (log) values ('$json')");
         curl_close($ch);
         break;
     default:
