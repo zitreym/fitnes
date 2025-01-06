@@ -42,9 +42,8 @@ switch ($textArray[0]) {
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HEADER, false);
         $resultQuery = curl_exec($ch);
-        $json = json_encode($resultQuery);
-        $query_tg = $mysqli->query("INSERT INTO tglog (log) values ('$json')");
         curl_close($ch);
+        $query_tg = $mysqli->query("INSERT INTO tglog (log) values ('$resultQuery')");
         break;
     default:
         $message_for_tg = "Я не знаю такую команду, для того, чтобы добавить тренировку, напишите так:
