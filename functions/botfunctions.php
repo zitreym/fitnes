@@ -1,6 +1,5 @@
 <?php
-function sendTelegram($userid, $message_for_tg)
-{
+function sendTelegram($userid, $message_for_tg, $token, $mysqli) {
     $getQuery = array(
         "chat_id" 	=> $userid,
         "text"  	=> $message_for_tg,

@@ -31,7 +31,7 @@ switch ($textArray[0]) {
         break;
     case '/start':
         $message_for_tg = "Это фитнес бот, чтобы добавить тренировку, напишите: добавить, название тренировки, описание тренировки, 2025-01-05 17:00, 250";
-        sendTelegram($userid, $message_for_tg);
+        sendTelegram($userid, $message_for_tg, $token, $mysqli);
         break;
     default:
         $message_for_tg = "Я не знаю такую команду, для того, чтобы добавить тренировку, напишите так:
