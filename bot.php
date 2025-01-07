@@ -30,23 +30,14 @@ switch ($textArray[0]) {
         $query_tg = $mysqli->query("INSERT INTO tglog (log) values ('$resultQuery')");
         break;
     case '/start':
-        $message_for_tg = "Это фитнес бот, чтобы добавить тренировку, напишите: добавить, название тренировки, описание тренировки, 2025-01-05 17:00, 250";
-        sendTelegram($userid, $message_for_tg, $token, $mysqli);
+        $message_for_tg = "Это фитнес бот, выберите команду:";
+        $keyboard_data = [[['text'=>'Список тренировок','callback_data'=>'/list_fit'],['text'=>'Добавить тренировку','callback_data'=>'/add_fit']]];
+        sendTelegramKeyboard($userid, $message_for_tg, $keyboard_data, $token, $mysqli);
         break;
     default:
         $message_for_tg = "Я не знаю такую команду, для того, чтобы добавить тренировку, напишите так:
             добавить, название тренировки, описание тренировки, 2025-01-05 17:00, 250";
-        $getQuery = array(
-            "chat_id" 	=> $userid,
-            "text"  	=> $message_for_tg,
-            "parse_mode" => "html"
-        );
-        $ch = curl_init("https://api.telegram.org/bot". $token ."/sendMessage?" . http_build_query($getQuery));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HEADER, false);
-        $resultQuery = curl_exec($ch);
-        curl_close($ch);
-        $query_tg = $mysqli->query("INSERT INTO tglog (log) values ('$resultQuery')");
+            sendTelegram($userid, $message_for_tg, $token, $mysqli);
         break;
 }
 }
