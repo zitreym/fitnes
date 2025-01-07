@@ -71,6 +71,23 @@ switch ($data['callback_query']['data']) {
         curl_close($ch);
         $query_tg = $mysqli->query("INSERT INTO tglog (log) values ('$resultQuery')");
         break;
+    case '/list_fit':
+        $result_allfit = $mysqli->query("SELECT *, DATE_FORMAT(date, '%d.%m %H:%i') FROM fit where date >= NOW()");
+        $result_allfit = $result_allfit->fetch_all();
+        $message_for_tg = "Список тренировок:";
+        $keyboard_data_sql =[];
+        foreach ($result_allfit as $fit){
+			$callback_data = "/changeid" . "_" . $fit[0];
+			$textbutton = $fit[5] . " " . $fit[1] . " (" . $fit[3] . ")";
+            $keyboard_data_sql_new = array(
+			array(
+				"text" 	=> $textbutton,
+				"callback_data"  => $callback_data
+			));
+			array_push($keyboard_data_sql, $keyboard_data_sql_new); 
+        }
+        sendTelegramKeyboard($data['callback_query']['from']['id'], $message_for_tg, $keyboard_data_sql, $token, $mysqli);
+        break;
     default:
         $message_for_tg = "Я не знаю такую команду ответа";
         $getQuery = array(
