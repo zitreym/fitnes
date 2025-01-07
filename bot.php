@@ -1,7 +1,7 @@
 <?php
 require("botsettings.php");
 require("sql.php");
-require("functions/botfunctions.php");
+require("botfunctions.php");
 $data = file_get_contents('php://input');
 $query_tg = $mysqli->query("INSERT INTO tglog (log) values ('$data')");
 $data = json_decode($data, true);
