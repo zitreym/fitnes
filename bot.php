@@ -12,7 +12,7 @@ $nameid = $data['message']['from']['username'];
 $text = $data['message']['text'];
 $textArray = explode(", ", $text);
 $callback_text = $data['callback_query']['data'];
-$callback_textArray = explode("_", $data);
+$callback_textArray = explode("_", $callback_text);
 
 
 if (empty($data['callback_query']['data'])) {
