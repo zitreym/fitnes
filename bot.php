@@ -34,7 +34,7 @@ switch ($textArray[0]) {
         break;
     case '/start':
         $message_for_tg = "Это фитнес бот, выберите команду:";
-        $keyboard_data = [[['text'=>'Список тренировок','callback_data'=>'/list_fit'],['text'=>'Добавить тренировку','callback_data'=>'/add_fit']]];
+        $keyboard_data = [[['text'=>'Список тренировок','callback_data'=>'/listfit'],['text'=>'Добавить тренировку','callback_data'=>'/addfit']]];
         sendTelegramKeyboard($userid, $message_for_tg, $keyboard_data, $token, $mysqli);
         break;
     default:
@@ -74,7 +74,7 @@ switch ($callback_textArray[0]) {
         curl_close($ch);
         $query_tg = $mysqli->query("INSERT INTO tglog (log) values ('$resultQuery')");
         break;
-    case '/list_fit':
+    case '/listfit':
         $result_allfit = $mysqli->query("SELECT *, DATE_FORMAT(date, '%d.%m %H:%i') FROM fit where date >= NOW()");
         $result_allfit = $result_allfit->fetch_all();
         $message_for_tg = "Список тренировок:";
