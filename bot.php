@@ -101,7 +101,7 @@ switch ($callback_textArray[0]) {
         sendTelegramKeyboard($data['callback_query']['from']['id'], $message_for_tg, $keyboard_data, $token, $mysqli);
         break;
     case '/deletefitid':
-        $result_allfit = $mysqli->query("DELETE fit where id='$callback_textArray[1]'");
+        $result_allfit = $mysqli->query("DELETE FROM fit where id='$callback_textArray[1]'");
         $message_for_tg = "Тренировка успешно удалена";
         sendTelegram($data['callback_query']['from']['id'], $message_for_tg, $token, $mysqli);
         break;
