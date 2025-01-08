@@ -11,6 +11,9 @@ $lastname = $data['message']['from']['last_name'];
 $nameid = $data['message']['from']['username'];
 $text = $data['message']['text'];
 $textArray = explode(", ", $text);
+$callback_text = $data['callback_query']['data'];
+$callback_textArray = explode("_", $data);
+
 
 if (empty($data['callback_query']['data'])) {
 switch ($textArray[0]) {
@@ -42,7 +45,7 @@ switch ($textArray[0]) {
 }
 }
 else {
-switch ($data['callback_query']['data']) {
+switch ($callback_textArray[0]) {
     case '/change':
         $message_for_tg = "Вы выбрали изменить тренировку";
         $getQuery = array(
@@ -77,7 +80,7 @@ switch ($data['callback_query']['data']) {
         $message_for_tg = "Список тренировок:";
         $keyboard_data_sql =[];
         foreach ($result_allfit as $fit){
-			$callback_data = "/changeid" . "_" . $fit[0];
+			$callback_data = "/fitid" . "_" . $fit[0];
 			$textbutton = $fit[5] . " " . $fit[1] . " (" . $fit[3] . ")";
             $keyboard_data_sql_new = array(
 			array(
@@ -87,6 +90,13 @@ switch ($data['callback_query']['data']) {
 			array_push($keyboard_data_sql, $keyboard_data_sql_new); 
         }
         sendTelegramKeyboard($data['callback_query']['from']['id'], $message_for_tg, $keyboard_data_sql, $token, $mysqli);
+        break;
+    case '/fitid':
+        $result_allfit = $mysqli->query("SELECT *, DATE_FORMAT(date, '%d.%m %H:%i') FROM fit where id='$callback_textArray[1]'");
+        $result_allfit = $result_allfit->fetch_all();
+        $message_for_tg = "Выбрана тренировка id" . $result_allfit[0][0] . ":" . " " . $fit[5] . " " . $fit[1] . " (" . $fit[3] . ")";
+        $keyboard_data = [[['text'=>'Изменить','callback_data'=>'/changefitid'],['text'=>'Удалить','callback_data'=>'/deletefitid']]];;
+        sendTelegramKeyboard($data['callback_query']['from']['id'], $message_for_tg, $keyboard_data, $token, $mysqli);
         break;
     default:
         $message_for_tg = "Я не знаю такую команду ответа";
