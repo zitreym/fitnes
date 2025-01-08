@@ -94,7 +94,7 @@ switch ($callback_textArray[0]) {
     case '/fitid':
         $result_allfit = $mysqli->query("SELECT *, DATE_FORMAT(date, '%d.%m %H:%i') FROM fit where id='$callback_textArray[1]'");
         $result_allfit = $result_allfit->fetch_all();
-        $message_for_tg = "Выбрана тренировка id" . $result_allfit[0][0] . ":" . " " . $fit[5] . " " . $fit[1] . " (" . $fit[3] . ")";
+        $message_for_tg = "Выбрана тренировка id" . $result_allfit[0][0] . ":" . " " . $result_allfit[0][5] . " " . $result_allfit[0][1] . " (" . $result_allfit[0][3] . ")";
         $keyboard_data = [[['text'=>'Изменить','callback_data'=>'/changefitid'],['text'=>'Удалить','callback_data'=>'/deletefitid']]];
         sendTelegramKeyboard($data['callback_query']['from']['id'], $message_for_tg, $keyboard_data, $token, $mysqli);
         break;
