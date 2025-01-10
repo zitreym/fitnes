@@ -10,7 +10,7 @@ require $_SERVER['DOCUMENT_ROOT']."/botsettings.php";
             $date_now = date("Y-m-d");
             if (!empty($report_user)) {
 $query = $mysqli->query("INSERT INTO reports (name, report, date) values ('$name_user', '$report_user', '$date_now')");
-$message_for_tg = "Новый отзыв на сайте от $report_user - $report_user";
+$message_for_tg = "Новый отзыв на сайте от $name_user - $report_user";
 $getQuery = array(
     "chat_id" 	=> 688790193,
     "text"  	=> $message_for_tg,
@@ -32,7 +32,7 @@ curl_close($ch);
     </form>
     <?php
         if (!empty($report_user)) {
-        echo "<script>alert('Спасибо за оставленный отзыв!')</script>";
+        echo "<script>alert('$name_user, cпасибо за оставленный отзыв!')</script>";
         }
         ?>
 </div>
