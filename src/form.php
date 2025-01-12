@@ -66,9 +66,6 @@ foreach ($result_allfit as $row) {
     </form>
     <?
     }
-        if ($fitchose_user > 0) {
-        echo "<script>alert('$name_user, вы успешно записались на тренировку: $name_fit')</script>";
-        }
         ?>
 </div>
 </body>
