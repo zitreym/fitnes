@@ -36,20 +36,7 @@ else {
     sendTelegramKeyboard($admin, $message_for_tg, $keyboard_data, $token, $mysqli);
     }
 }
-foreach ($admins as $admin) {
-$getQuery = array(
-    "chat_id" 	=> $admin,
-    "text"  	=> $message_for_tg,
-    "parse_mode" => "html"
-);
-$ch = curl_init("https://api.telegram.org/bot". $token ."/sendMessage?" . http_build_query($getQuery));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HEADER, false);
-$resultQuery = curl_exec($ch);
-curl_close($ch);
 }
-
-            }
              ?>" method="post" class='form_sign'>
         <p class="form_txt_info">Запись на тренировку:</p>
         <div class='form_border'>
@@ -79,7 +66,7 @@ foreach ($result_allfit as $row) {
     </form>
     <?
     }
-        if (!empty($fitchose_user)) {
+        if ($fitchose_user > 0) {
         echo "<script>alert('$name_user, вы успешно записались на тренировку: $name_fit')</script>";
         }
         ?>
