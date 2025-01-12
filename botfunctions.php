@@ -51,7 +51,7 @@ function takewaurl($phone_user) {
             return $waurl;
         break;
         default:
-            $waurl = "badnumber"
+            $waurl = "badnumber";
             return $waurl;
         break;
     }

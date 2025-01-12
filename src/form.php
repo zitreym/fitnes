@@ -11,7 +11,6 @@ if (empty($result_allfit)) {
 }
 else {
 ?>
-
     <form action="<?php
             $name_user = $_POST['name_user'];
             $phone_user = $_POST['phone_user'];
@@ -66,6 +65,7 @@ foreach ($result_allfit as $row) {
     </form>
     <?
     }
+
         ?>
 </div>
 </body>
