@@ -64,8 +64,10 @@ foreach ($result_allfit as $row) {
         <input type="submit" value="ОТПРАВИТЬ" class="form_button">
     </form>
     <?
+    if (!empty($fitchose_user)) {
+        echo "<script>alert('$name_user, вы успешно записались на тренировку: $name_fit')</script>";
+        }
     }
-
         ?>
 </div>
 </body>
