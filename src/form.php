@@ -3,6 +3,7 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT']."/sql.php";
 require $_SERVER['DOCUMENT_ROOT']."/botsettings.php";
+require $_SERVER['DOCUMENT_ROOT']."/botfunctions.php";
 $result_allfit = $mysqli->query("SELECT *, DATE_FORMAT(date, '%d.%m %H:%i') FROM fit where date >= NOW() ");
 $result_allfit = $result_allfit->fetch_all();
 if (empty($result_allfit)) {
@@ -23,6 +24,18 @@ $date_fit=$result_fit[0][0];
 $name_fit=$result_fit[0][1];
 $description_fit=$result_fit[0][2];
 $message_for_tg = "Новая запись на тренировку $date_fit $name_fit $description_fit от $name_user с телефоном $phone_user";
+$waurl = takewaurl($phone_user);
+$keyboard_data = [[['text'=>'Написать WhatsApp','url'=>$waurl]]];
+if ($waurl == "badnumber") {
+    foreach ($admins as $admin) {
+    sendTelegram($admin, $message_for_tg, $token, $mysqli);
+}
+}
+else {
+    foreach ($admins as $admin) {
+    sendTelegramKeyboard($admin, $message_for_tg, $keyboard_data, $token, $mysqli);
+    }
+}
 foreach ($admins as $admin) {
 $getQuery = array(
     "chat_id" 	=> $admin,
@@ -66,9 +79,9 @@ foreach ($result_allfit as $row) {
     </form>
     <?
     }
-    ?>
+        if (!empty($fitchose_user)) {
+        echo "<script>alert('$name_user, вы успешно записались на тренировку: $name_fit')</script>";
+        }
+        ?>
 </div>
 </body>
-
-
-
