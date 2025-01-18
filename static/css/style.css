@@ -147,14 +147,14 @@
  .tg_icon{
      background-image: url(../img/tg.png);
  }
-.info_box {
+.info_box, .box_report {
      width: 90%;
      padding: 10px;
      display: flex;
      flex-direction: column;
      border-radius: 10px;
      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
-     margin-bottom: 15px;
+     margin-top: 15px;
 }
 .info_bold_txt {
      color: black;
@@ -272,22 +272,14 @@
      resize: none;
      height: 70px;
 }
-.box_report {
-     display: flex;
-     flex-direction: column;
-     width: 90%;
-     border-bottom: 2px solid rgba(116, 9, 121);
-     margin-bottom: 10px;
-     padding-bottom: 10px;
-}
 .user_report_about_box {
      display: flex;
-     justify-content: space-between;
      align-items: center;
+     margin-bottom: 10px;
 }
 .user_report_box {
      display: flex;
-     align-items: center;
+     flex-direction: column;
 }
 .user_report_avatar {
      height: 25px;

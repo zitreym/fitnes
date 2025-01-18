@@ -3,6 +3,7 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT']."/sql.php";
 require $_SERVER['DOCUMENT_ROOT']."/botsettings.php";
+require $_SERVER['DOCUMENT_ROOT']."/botfunctions.php";
 ?>
     <form action="<?php
             $name_user = $_POST['name_user'];
@@ -11,16 +12,9 @@ require $_SERVER['DOCUMENT_ROOT']."/botsettings.php";
             if (!empty($report_user)) {
 $query = $mysqli->query("INSERT INTO reports (name, report, date) values ('$name_user', '$report_user', '$date_now')");
 $message_for_tg = "Новый отзыв на сайте от $name_user - $report_user";
-$getQuery = array(
-    "chat_id" 	=> 688790193,
-    "text"  	=> $message_for_tg,
-    "parse_mode" => "html"
-);
-$ch = curl_init("https://api.telegram.org/bot". $token ."/sendMessage?" . http_build_query($getQuery));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HEADER, false);
-$resultQuery = curl_exec($ch);
-curl_close($ch);
+foreach ($admins as $admin) {
+    sendTelegram($admin, $message_for_tg, $token, $mysqli);
+}
             }
              ?>" method="post" class='form_sign'>
         <p class="form_txt_info">Оставить отзыв:</p>
