@@ -16,6 +16,7 @@ $callback_textArray = explode("_", $callback_text);
 
 
 if (empty($data['callback_query']['data'])) {
+if (in_array($userid , $admins)) {
 switch ($textArray[0]) {
     case 'добавить':
         $query = $mysqli->query("INSERT INTO fit (name, description, date, price) values ('$textArray[1]', '$textArray[2]', '$textArray[3]', '$textArray[4]')");
@@ -45,6 +46,12 @@ switch ($textArray[0]) {
 }
 }
 else {
+    $message_for_tg = "У вас недостаточно прав";
+    sendTelegram($userid, $message_for_tg, $token, $mysqli);
+}
+}
+else {
+if (in_array($data['callback_query']['from']['id'] , $admins)) {
 switch ($callback_textArray[0]) {
     case '/change':
         $message_for_tg = "Вы выбрали изменить тренировку";
@@ -119,5 +126,10 @@ switch ($callback_textArray[0]) {
         curl_close($ch);
         $query_tg = $mysqli->query("INSERT INTO tglog (log) values ('$resultQuery')");
         break;
+}
+}
+else {
+    $message_for_tg = "У вас недостаточно прав";
+    sendTelegram($userid, $message_for_tg, $token, $mysqli);
 }
 }
