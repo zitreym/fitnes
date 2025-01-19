@@ -290,6 +290,10 @@
      background-repeat: no-repeat;
      background-size: cover;
 }
+.sheduler_box {
+     display: flex;
+     justify-content: space-between;
+}
  @media (max-width: 600px) {
 .wrapper { 
      width: 100%;
