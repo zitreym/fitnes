@@ -301,14 +301,19 @@
      width: 100%;
 }
 .photo_box {
-     width: 29%;
+     width: 30%;
      background-repeat: no-repeat;
      background-size: cover;
      background-position: center;
      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
-     margin: 10px 2%;
+     margin: 10px 0;
      border-radius: 10px;
      height: 150px;
+}
+.photo_box_empty {
+     width: 30%;
+     height: 150px;
+     margin: 10px 0;
 }
  @media (max-width: 600px) {
 .wrapper { 
