@@ -294,6 +294,22 @@
      display: flex;
      justify-content: space-between;
 }
+.photo_wrapper {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     width: 100%;
+}
+.photo_box {
+     width: 29%;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+     margin: 10px 2%;
+     border-radius: 10px;
+     height: 150px;
+}
  @media (max-width: 600px) {
 .wrapper { 
      width: 100%;
