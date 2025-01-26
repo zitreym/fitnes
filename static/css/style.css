@@ -315,6 +315,17 @@
      height: 150px;
      margin: 10px 0;
 }
+.photo_hidden {
+     display: none;
+     position: fixed;
+     top: 5%;
+     left: 5%;
+     width: 90%;
+     height: 90%;
+     background-repeat: no-repeat;
+     background-size: contain;
+     background-position: center;
+ }
  @media (max-width: 600px) {
 .wrapper { 
      width: 100%;
