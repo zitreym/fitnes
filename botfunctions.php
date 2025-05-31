@@ -27,6 +27,9 @@ function sendTelegramKeyboard($userid, $message_for_tg, $keyboard_data, $token, 
     curl_close($ch);
     $query_tg = $mysqli->query("INSERT INTO tglog (log) values ('$resultQuery')");
 }
+function removeBracketsAndPlus($inputString) {
+    return preg_replace('/[$$+\s]/', '', $inputString);
+}
 function takewaurl($phone_user) {
     switch(strlen( $phone_user )) {
         case '10':

@@ -23,6 +23,7 @@ $date_fit=$result_fit[0][0];
 $name_fit=$result_fit[0][1];
 $description_fit=$result_fit[0][2];
 $message_for_tg = "Новая запись на тренировку $date_fit $name_fit $description_fit от $name_user с телефоном $phone_user";
+$phone_user = removeBracketsAndPlus($phone_user);
 $waurl = takewaurl($phone_user);
 $keyboard_data = [[['text'=>'Написать WhatsApp','url'=>$waurl]]];
 if ($waurl == "badnumber") {
